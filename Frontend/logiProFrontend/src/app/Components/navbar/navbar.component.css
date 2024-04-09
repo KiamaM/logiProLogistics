@@ -1,0 +1,33 @@
+.navContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: #273241;
+    color: white;
+    font-weight: 300;
+    padding-block: 5px;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+     /* background-color: black; */
+}
+
+button{
+    width: 10%;
+    height: 40px;
+    color: white;
+    background-color: #42B1E1;
+    border-radius: 10px;
+    border: none;
+}
