@@ -1,0 +1,296 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98.8vw;
+}
+
+app-navbar{
+    --navBarWidth:98.8vw;
+}
+
+.hero{
+    width: 100%;
+    height: 75vh;
+    background-image: url('../../../assets/truck-8656658_1280.jpg');
+    background-size:cover;
+    background-position: center;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#topDesc{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.servicesDiv{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: white; */
+    width: 40%;
+}
+
+.service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    height: 29vh;
+    width: 32%;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.822);
+    background-color: #edfbffc4;
+}
+
+.service:hover {
+    background-color: #42B1E1;
+    transform: scale(1.12); /* Increase the size by 5% */
+    color: #fff;
+  }
+
+  .service:active {
+    background-color: #42B1E1;
+    transform: scale(1.15); /* Increase the size by 5% */
+    color: #fff;
+  }
+  
+
+.service i{
+    font-size: 50px;
+    color: rgba(0, 0, 0, 0.425);
+}
+/* .service a{
+    color: #009cf7e5;
+} */
+
+.service p{
+    text-align: center;
+    padding-inline: 25px;
+    /* font-family: sans-serif; */
+    font-weight: 500;
+}
+
+.serviceDesc{
+    font-size: 15px;
+}
+
+.searchDiv{
+    width: 60%;
+    background-color: #4484ae91;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#searchField{
+    width: 92%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: none;
+    padding: 10px;
+    text-overflow: clip;
+    background-color: rgba(255, 255, 255, 0.637);
+}
+
+#searchField:focus{
+    outline: none;    
+}
+
+.searchDiv span{
+    padding-left: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.businessDesc{
+    width: 100%;
+    background-color: #EDFBFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7vh;
+}
+
+.businessPkgDiv{
+    padding-block: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 40vh;
+}
+
+.businessPkgDiv h2{
+    font-weight: 600;
+}
+
+.businessPkgDiv p{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5; /* Increase line height to 1.5 times the font size */
+    /* color: #4484ae91; */
+}
+
+.businessPkgDiv button{
+    width: 20%;
+    height: 40px;
+    background-color: #42B1E1;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.returns{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.options{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    margin-top: 7vh;
+}
+
+.redirect, .return{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 50%;
+}
+
+.options i{
+    font-size: 60px;
+    color:#009EF7;
+}
+
+.infoCardsDiv{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15vh;
+}
+
+
+.infoCard{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+    height: 30vh;
+    text-align: center;
+    padding: 30px;
+    width: 31%;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+
+.infoCard button{
+    margin-top: 0;
+    appearance: none;
+    background-color: #42B1E1;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+
+.clients{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    /* border: 1px solid blue;   */
+    justify-content: space-between;
+    width: 70%;
+}
+
+.subscribe{
+    display: flex;
+    gap: 2vh;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2vh;
+    padding: 1vh;
+    height: 20vh;
+    width: 100%;
+    background-image: linear-gradient(to right,white,gray);
+    margin-bottom: 0;
+}
+
+.subscribe button{
+    background-color:#409cf1;
+    width: 15vh;
+    border: none;
+}
+
+.subscribe input{
+    border: none;
+    width: 30vh;
+    height: 4vh;
+    padding-left: 10px;
+}
+
+.subscribe input:focus{
+    outline: none;
+}
+
+.subscribe .input{
+    display: flex;
+    gap: 0;
+}
+
+.subscribe h4{
+    font-size: 20px;
+    margin: 0px;
+}
+
+.sh4{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
