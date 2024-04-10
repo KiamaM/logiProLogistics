@@ -1,0 +1,157 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98.8vw;
+}
+
+app-navbar{
+    --navBarWidth:98.8vw;
+}
+
+.hero{
+    width: 100%;
+    height: 75vh;
+    background-image: url('../../../assets/truck-8656658_1280.jpg');
+    background-size:cover;
+    background-position: center;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#topDesc{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.servicesDiv{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: white; */
+    width: 40%;
+}
+
+.service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    height: 25vh;
+    width: 32%;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.822);
+    background-color: #edfbffc4;
+}
+
+.service:hover {
+    background-color: #42B1E1;
+    transform: scale(1.12); /* Increase the size by 5% */
+    color: rgba(255, 255, 255, 0.801);
+  }
+
+  .service:active {
+    background-color: #42B1E1;
+    transform: scale(1.15); /* Increase the size by 5% */
+    color: rgba(255, 255, 255, 0.712);
+  }
+  
+
+.service i{
+    font-size: 50px;
+    color: rgba(0, 0, 0, 0.425);
+}
+/* .service a{
+    color: #009cf7e5;
+} */
+
+.service p{
+    font-size: 16px;
+    text-align: center;
+    padding-inline: 25px;
+}
+
+.serviceDesc{
+    font-size: 14px;
+}
+
+.searchDiv{
+    width: 60%;
+    background-color: #4484ae91;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#searchField{
+    width: 92%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: none;
+    padding: 10px;
+    text-overflow: clip;
+    background-color: rgba(255, 255, 255, 0.637);
+}
+
+#searchField:focus{
+    outline: none;    
+}
+
+.searchDiv span{
+    padding-left: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.businessDesc{
+    width: 100%;
+    background-color: #EDFBFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7vh;
+}
+
+.businessPkgDiv{
+    padding-block: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 20vh;
+}
+
+.businessPkgDiv h3{
+    font-weight: 400;
+}
+
+.businessPkgDiv p{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5; /* Increase line height to 1.5 times the font size */
+}
+
+.businessPkgDiv button{
+    width: 20%;
+    height: 40px;
+    background-color: #42B1E1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+
+

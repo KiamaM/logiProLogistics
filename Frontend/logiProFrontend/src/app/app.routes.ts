@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { NavbarComponent } from './Components/navbar/navbar.component';
+import { LandingPageComponent } from './Components/landing-page/landing-page.component';
 
 export const routes: Routes = [
 
-    {path: '', component:NavbarComponent},
+    {path: '', component:LandingPageComponent},
 
 ];
 
