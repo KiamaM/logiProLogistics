@@ -18,6 +18,11 @@
     justify-content: center;
 }
 
+.logo img{
+    cursor: pointer;
+}
+
+
 
 .register{
     width: 20%;
