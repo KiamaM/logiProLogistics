@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="logo">
+        <img src="../../../assets/logistics (3)-Photoroom.png-Photoroom.png" alt="" width="150" routerLink="/">
+    </div>
+        <div class="logins">
+            <div *ngIf="visible2" class="successDiv"  style="color: green; text-align: center; width: 100%;">{{successMsg}}</div> 
+            <div data-cy="IncorrectPw" *ngIf="visible" class="errorDiv" style="color: red; text-align: center;">{{errorMsg}}</div>   
+            <form #LoginForm = 'ngForm' (ngSubmit)="login(LoginForm.value)" class="loginForm">
+                <p id="signIn">Sign in to Your Account</p>
+                <div class="loginInputs">            
+                    <div class="emailField">
+                        <label for="loginEmail">Email:*</label>
+                        <br>
+                        <input data-cy="email-field"  type="email" name="email" id="loginEmail" ngModel placeholder="johndoe@example.com"> 
+                    </div>
+                    <div class="passwordField">
+                        <label for="loginPassword">Password:*</label>
+                        <br>
+                        <input data-cy="password-field"  type="password" name="password" id="loginPassword" ngModel placeholder="*************">
+                        <br>
+                    </div>
+                </div>
+                <div class="loginBtn">
+                    <input id="login" data-cy="login-button"  type="submit" value="LOG IN"> <br>
+                    <div class="nav">
+                        <a data-cy="resetPw-link"  routerLink="/reset-password" style="padding-left: 5px; font-size: 14px;">Forgot Password?</a><br>
+                    </div>
+                    <p style="font-size: 13px; padding-left:5px;">Don't have a account?<span routerLink="/register" style="color: #009EF7; cursor: pointer;">Sign Up</span></p>
+
+                </div>
+                <div class="terms">
+                </div>
+            </form>    
+        </div>
+
+</div>
+<app-footer></app-footer>
+
