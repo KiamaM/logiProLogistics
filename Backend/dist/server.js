@@ -28,9 +28,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importStar(require("express"));
 const cors_1 = __importDefault(require("cors"));
+const user_router_1 = __importDefault(require("./Routes/user.router"));
 const app = (0, express_1.default)();
 app.use((0, express_1.json)());
 app.use((0, cors_1.default)());
+//App Routes
+app.use('/users', user_router_1.default);
 app.use((error, request, response, next) => {
     response.json({
         message: error.message

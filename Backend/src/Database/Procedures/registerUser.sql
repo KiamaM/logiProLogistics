@@ -4,18 +4,14 @@ CREATE OR ALTER PROCEDURE registerUser(
     @lastName VARCHAR(50),
     @email VARCHAR(100),
     @phoneNumber VARCHAR(20),
-    @password VARCHAR(50),
-    @isWelcomed BIT,
-    @isDeleted BIT,
-    @registerDate DATE
-    
+    @hashedPwd VARCHAR(50)    
 )
 AS
 BEGIN
 IF NOT EXISTS(SELECT * FROM users WHERE email = @email)
     BEGIN
         INSERT INTO users( userId,firstName,lastName, email,phoneNumber,password, isWelcomed, isDeleted, registerDate)
-        VALUES(@userId, @firstName, @lastName, @email, @phoneNumber, @password, 0, 0, GETDATE())
+        VALUES(@userId, @firstName, @lastName, @email, @phoneNumber, @hashedPwd, 0, 0, GETDATE())
     END
 ELSE
     BEGIN 
