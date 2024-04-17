@@ -16,11 +16,17 @@
   "description": "Logipro backend",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest  --watchAll",
     "start:build": "tsc -w",
     "start:run": "nodemon dist/server.js",
     "start": "concurrently npm:start:*"
   },
   "author": "Kiama",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.24.1",
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.12",
+    "ts-jest": "^29.1.2"
+  }
 }
