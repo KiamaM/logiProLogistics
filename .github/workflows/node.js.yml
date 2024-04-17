@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Change to Backend directory
-        run: cd Backend
+        run: cd Backend\src\Controllers\__test__
 
       - name: Install dependencies
         run: npm ci
