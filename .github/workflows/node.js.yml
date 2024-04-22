@@ -16,6 +16,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Reconfigure git to use HTTP authentication
+        run: >
+          git config --global url."https://github.com/".insteadOf
+          ssh://git@github.com/
 
       - name: List files in directory
         run: ls -la /home/runner/work/logiProLogistics/logiProLogistics
