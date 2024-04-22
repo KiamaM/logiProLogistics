@@ -22,5 +22,5 @@ app.use((error:Error, request:Request, response:Response, next:NextFunction)=>{
 let port = 4500
 
 app.listen(port, ()=>{
-    console.log(`Server running on port${port}`);    
+    console.log(`Server running on port ${port}`);    
 })

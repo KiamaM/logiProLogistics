@@ -1,18 +1,20 @@
 import express, { NextFunction, Request, Response, json, request } from 'express'
-import cors from 'cors'
+import nodecron from 'node-cron'
+import { welcomeUser } from './MailServices/welcomeUser'
 
 const app = express()
 
-app.use(json())
-app.use(cors())
 
-
-
-app.use((error:Error,req:Request, res:Response, next:NextFunction)=>{
-    return res.json({
-        message:error.message
+const run = async()=>{
+    nodecron.schedule('*/5 * * * * *', async()=>{
+        console.log('checking for a new user');
+        
+        await welcomeUser()
     })
-})
+    
+}
+
+run()
 
 const port = 4600
 
