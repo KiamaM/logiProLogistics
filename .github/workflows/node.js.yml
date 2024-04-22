@@ -17,13 +17,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
+      - name: List files in directory
+        run: ls -la /home/runner/work/logiProLogistics/logiProLogistics
 
       - name: Change to test directory
-        run: cd Backend
+        run: |
+          cd Backend
+          ls -la   # Log files in the Backend directory
+          pwd      # Log current directory path
 
       - name: Install dependencies
         run: npm install
