@@ -42,3 +42,66 @@ export const addProduct = async(req:Request, res:Response)=>{
     }
 
 }
+
+
+export const getAllProducts = async(req:Request, res:Response)=>{
+
+    try {
+
+        let products = (await dbHelper.execute('getAllProducts')).recordset
+
+        return res.json({
+            products:products
+        })
+        
+    } catch (error:any) {
+        return res.json({
+            error:error.originalError.message
+        })
+    }
+     
+}
+
+export const getOneProduct = async(req:Request, res:Response)=>{
+    try {
+
+    const id = req.params.id;
+
+    let product = (await dbHelper.execute('getOneProduct', {productId:id})).recordset
+
+
+    return res.json({
+        product:product
+    })
+        
+    } catch (error:any) {
+        return res.json({
+            error:error.originalError.message
+        })
+    }
+
+}
+
+export const deleteProduct = async(req:Request, res:Response)=>{
+    try {
+
+        const id = req.params.id
+
+        const result = (await dbHelper.execute('deleteProduct', {productId:id})).rowsAffected
+
+        if(result[0] <1){
+            return res.json({
+                error:'Could not delete product'
+            })
+        }else{
+            return res.json({
+                message:'Product deleted successfully'
+            })
+        }
+        
+    } catch (error) {
+        return res.json({
+            error:error
+        })
+    }
+}
