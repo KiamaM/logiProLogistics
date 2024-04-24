@@ -4,12 +4,25 @@ Content-Type: application/json
 {
     "firstName":"David",
     "lastName":"Doe",
-    "email":"muriithikiamad1+423@gmail.com" ,
+    "email":"muriithikiamad1@gmail.com" ,
     "role":"customer",    
     "phoneNumber":"03655644567",
     "password":"password12344"
 }
 
 
-###
+###    Inventory Routes
+POST http://localhost:4500/inventory/addProduct
+Content-Type: application/json
+
+{
+    "image":"wertyuiertyuidfgh",
+    "productName":"Kales",
+    "description":"Green leafy vegetables",
+    "category":"Vegetables",
+    "quantity":"5",
+    "currentPrice":"4", 
+    "formerPrice":"4"
+}
+
 
