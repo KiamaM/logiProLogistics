@@ -21,7 +21,7 @@ const dbhelper = new dbHelper_1.default;
 const registerUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const userId = (0, uuid_1.v4)();
-        const { firstName, lastName, email, phoneNumber, password } = req.body;
+        const { firstName, lastName, email, role, phoneNumber, password } = req.body;
         const { error } = user_validators_1.regusterUserValidation.validate(req.body);
         if (error) {
             return res.json({
@@ -30,7 +30,7 @@ const registerUser = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         }
         const hashedPwd = yield bcrypt_1.default.hash(password, 5);
         let result = yield dbhelper.execute('registerUser', {
-            userId: userId, firstName, lastName, email, phoneNumber, hashedPwd
+            userId: userId, firstName, lastName, email, role, phoneNumber, hashedPwd
         });
         if (result.rowsAffected[0] < 1) {
             return res.json({

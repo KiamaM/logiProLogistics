@@ -4,7 +4,12 @@ Content-Type: application/json
 {
     "firstName":"David",
     "lastName":"Doe",
-    "email":"muriithikiamad1+123@gmail.com" ,
+    "email":"muriithikiamad1+423@gmail.com" ,
+    "role":"customer",    
     "phoneNumber":"03655644567",
     "password":"password12344"
 }
+
+
+###
+
