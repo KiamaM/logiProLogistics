@@ -11,7 +11,7 @@ export const registerUser = async(req:Request, res:Response)=>{
     try {
         const userId = v4()
 
-        const{firstName,lastName, email, phoneNumber, password } = req.body  
+        const{firstName,lastName, email,role, phoneNumber, password } = req.body  
         
         const{error} = regusterUserValidation.validate(req.body)
 
@@ -25,7 +25,7 @@ export const registerUser = async(req:Request, res:Response)=>{
         const hashedPwd = await  bcrypt.hash(password, 5) 
 
         let result = await dbhelper.execute('registerUser',{
-           userId:userId, firstName,lastName, email, phoneNumber, hashedPwd 
+           userId:userId, firstName,lastName, email, role, phoneNumber, hashedPwd 
         })
 
         if(result.rowsAffected[0] < 1){
@@ -46,3 +46,4 @@ export const registerUser = async(req:Request, res:Response)=>{
     }
 
 }
+
