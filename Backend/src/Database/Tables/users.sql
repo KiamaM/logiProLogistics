@@ -13,5 +13,7 @@ CREATE TABLE users(
 
 DROP TABLE users
 
+SELECT * FROM users
+
 ALTER TABLE users
 ADD CONSTRAINT DF_users_role DEFAULT 'customer' FOR role;

@@ -11,6 +11,30 @@ Content-Type: application/json
 }
 
 
+###
+DELETE  http://localhost:4500/users/deactivateUser/78386d78-0b45-47b4-9ae0-13a26052f6b2
+Content-Type: application/json
+
+###
+GET  http://localhost:4500/users/allCustomers
+Content-Type: application/json
+
+
+###
+GET  http://localhost:4500/users/customer/78386d78-0b45-47b4-9ae0-13a26052f6b2
+Content-Type: application/json
+
+###
+###
+GET  http://localhost:4500/users/allCouriers
+Content-Type: application/json
+
+
+###
+GET  http://localhost:4500/users/courier
+Content-Type: application/json
+
+
 ###    Inventory Routes
 POST http://localhost:4500/inventory/addProduct
 Content-Type: application/json

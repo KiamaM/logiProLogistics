@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.registerUser = void 0;
+exports.deactivateUser = exports.getOneCourier = exports.getAllCouriers = exports.getOneCustomer = exports.getAllCustomers = exports.registerUser = void 0;
 const uuid_1 = require("uuid");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const user_validators_1 = require("../Validators/user.validators");
@@ -50,3 +50,85 @@ const registerUser = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     }
 });
 exports.registerUser = registerUser;
+//  Customer controllers
+const getAllCustomers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let customers = (yield dbhelper.execute('getAllCustomers')).recordset;
+        return res.json({
+            customers: customers
+        });
+    }
+    catch (error) {
+        return res.json({
+            error: error.originalError.message
+        });
+    }
+});
+exports.getAllCustomers = getAllCustomers;
+const getOneCustomer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = req.params.id;
+        let customer = (yield dbhelper.execute('getOneCustomer', { userId: id })).recordset;
+        return res.json({
+            customer: customer
+        });
+    }
+    catch (error) {
+        return res.json({
+            error: error.originalError.message
+        });
+    }
+});
+exports.getOneCustomer = getOneCustomer;
+//Courier controllers
+const getAllCouriers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let courier = (yield dbhelper.execute('getAllCouriers')).recordset;
+        return res.json({
+            courier: courier
+        });
+    }
+    catch (error) {
+        return res.json({
+            error: error.originalError.message
+        });
+    }
+});
+exports.getAllCouriers = getAllCouriers;
+const getOneCourier = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = req.params.id;
+        let courier = (yield dbhelper.execute('getOneCourier', { userId: id })).recordset;
+        return res.json({
+            courier: courier
+        });
+    }
+    catch (error) {
+        return res.json({
+            error: error.originalError.message
+        });
+    }
+});
+exports.getOneCourier = getOneCourier;
+const deactivateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = req.params.id;
+        const result = (yield dbhelper.execute('deactivateUser', { userId: id })).rowsAffected;
+        if (result[0] < 1) {
+            return res.json({
+                error: 'Could not deactivate user'
+            });
+        }
+        else {
+            return res.json({
+                message: 'Account deactivated successfully'
+            });
+        }
+    }
+    catch (error) {
+        return res.json({
+            error: error
+        });
+    }
+});
+exports.deactivateUser = deactivateUser;
