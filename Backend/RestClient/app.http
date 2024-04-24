@@ -50,3 +50,19 @@ Content-Type: application/json
 }
 
 
+###
+
+
+GET  http://localhost:4500/inventory/allProducts
+Content-Type: application/json
+
+
+###
+GET  http://localhost:4500/inventory/product/f0619109-b60b-4714-93ed-fc07895ec3da
+Content-Type: application/json
+
+
+###
+DELETE   http://localhost:4500/inventory/deleteProduct/f0619109-b60b-4714-93ed-fc07895ec3da
+Content-Type: application/json
+
