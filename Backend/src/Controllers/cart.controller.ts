@@ -31,3 +31,20 @@ export const addToCart = async(req:Request, res:Response)=>{
         })
     }
 }
+
+
+export const removeFromCart = async(req:Request, res:Response)=>{
+    const id = req.params.id
+
+    const result = (await dbHelper.execute('removeFromCart',{productId:id})).rowsAffected
+
+    if(result[0]<1){
+        return res.json({
+            error:'Unable to remove item from cart'
+        })
+    }else{
+        return res.json({
+            message:'Item removed from cart successfully'
+        })
+    }
+}
