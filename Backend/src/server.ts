@@ -3,6 +3,7 @@ import cors from 'cors'
 import userRouter from './Routes/user.router'
 import auth_router from './Routes/auth.router'
 import inventoryRouter from './Routes/inventory.router'
+import cartRouter from './Routes/cart.router'
 
 const app = express()
 app.use(json())
@@ -13,6 +14,7 @@ app.use(cors())
 app.use('/users', userRouter)
 app.use('/auth', auth_router)
 app.use('/inventory', inventoryRouter)
+app.use('/cart', cartRouter)
 
 
 
