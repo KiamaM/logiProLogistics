@@ -66,3 +66,15 @@ Content-Type: application/json
 DELETE   http://localhost:4500/inventory/deleteProduct/f0619109-b60b-4714-93ed-fc07895ec3da
 Content-Type: application/json
 
+
+### Cart Routes
+POST http://localhost:4500/cart/addToCart
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3ODM4NmQ3OC0wYjQ1LTQ3YjQtOWFlMC0xM2EyNjA1MmY2YjIiLCJmaXJzdE5hbWUiOiJEYXZpZCIsImxhc3ROYW1lIjoiRG9lIiwiZW1haWwiOiJtdXJpaXRoaWtpYW1hZDErNDIzQGdtYWlsLmNvbSIsInJvbGUiOiJjdXN0b21lciIsInBob25lTnVtYmVyIjoiMDM2NTU2NDQ1NjciLCJyZWdpc3RlckRhdGUiOiIyMDI0LTA0LTI0VDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE3MTQxMTc0MDksImV4cCI6MTcxNDM3NjYwOX0.Su08LNbdg-99OihBahfGj8p8asl5UQZGXJ2lpjbsYWs
+
+{
+    "productId":"f0619109-b60b-4714-93ed-fc07895ec3da",
+    "userId":"78386d78-0b45-47b4-9ae0-13a26052f6b2",
+    "quantity":"5"
+}
+

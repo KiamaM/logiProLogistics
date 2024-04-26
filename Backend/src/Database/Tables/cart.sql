@@ -1,0 +1,18 @@
+CREATE TABLE cart(
+    cartId VARCHAR(100) PRIMARY KEY NOT NULL,
+    userId VARCHAR(100) NOT NULL,
+    productId VARCHAR(100) NOT NULL,
+    quantity NUMERIC NOT NULL,
+    amount NUMERIC NOT NULL,
+    isRemoved BIT DEFAULT 0
+)
+
+ALTER TABLE cart ADD CONSTRAINT FK_cart_users FOREIGN KEY (userId) REFERENCES users(userId)
+
+ALTER TABLE cart ADD CONSTRAINT FK_cart_inventory FOREIGN KEY (productId) REFERENCES inventory(productId)
+
+ALTER TABLE cart DROP COLUMN amount
+
+ALTER TABLE cart ADD quantity NUMERIC NOT NULL
+
+SELECT * FROM cart

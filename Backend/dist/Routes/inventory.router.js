@@ -2,9 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const inventory_controller_1 = require("../Controllers/inventory.controller");
+const verifyToken_1 = require("../Middlewares/verifyToken");
 const inventoryRouter = (0, express_1.Router)();
-inventoryRouter.post('/addProduct', inventory_controller_1.addProduct);
+inventoryRouter.post('/addProduct', verifyToken_1.verifyToken, inventory_controller_1.addProduct);
 inventoryRouter.get('/allProducts', inventory_controller_1.getAllProducts);
 inventoryRouter.get('/product/:id', inventory_controller_1.getOneProduct);
-inventoryRouter.delete('/deleteProduct/:id', inventory_controller_1.deleteProduct);
+inventoryRouter.delete('/deleteProduct/:id', verifyToken_1.verifyToken, inventory_controller_1.deleteProduct);
 exports.default = inventoryRouter;
