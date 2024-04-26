@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addToCart = void 0;
+exports.removeFromCart = exports.addToCart = void 0;
 const uuid_1 = require("uuid");
 const dbHelper_1 = __importDefault(require("../dbHelpers/dbHelper"));
 const dbHelper = new dbHelper_1.default;
@@ -41,3 +41,18 @@ const addToCart = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.addToCart = addToCart;
+const removeFromCart = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const id = req.params.id;
+    const result = (yield dbHelper.execute('removeFromCart', { productId: id })).rowsAffected;
+    if (result[0] < 1) {
+        return res.json({
+            error: 'Unable to remove item from cart'
+        });
+    }
+    else {
+        return res.json({
+            message: 'Item removed from cart successfully'
+        });
+    }
+});
+exports.removeFromCart = removeFromCart;
