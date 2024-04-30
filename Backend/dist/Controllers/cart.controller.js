@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.removeFromCart = exports.addToCart = void 0;
+exports.itemsInCart = exports.removeFromCart = exports.addToCart = void 0;
 const uuid_1 = require("uuid");
 const dbHelper_1 = __importDefault(require("../dbHelpers/dbHelper"));
 const dbHelper = new dbHelper_1.default;
@@ -56,3 +56,19 @@ const removeFromCart = (req, res) => __awaiter(void 0, void 0, void 0, function*
     }
 });
 exports.removeFromCart = removeFromCart;
+const itemsInCart = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { userId } = req.body;
+        const cartItems = ((yield dbHelper.execute('itemsInCart', { userId })).recordset);
+        console.log(cartItems[0].quantity);
+        return res.json({
+            cartItems: cartItems
+        });
+    }
+    catch (error) {
+        return res.json({
+            error: error.originalError.info.message
+        });
+    }
+});
+exports.itemsInCart = itemsInCart;

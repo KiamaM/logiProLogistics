@@ -48,3 +48,25 @@ export const removeFromCart = async(req:Request, res:Response)=>{
         })
     }
 }
+
+
+
+export const itemsInCart = async(req:Request, res:Response)=>{
+    try {
+        const{userId}=req.body
+
+        const cartItems = ((await dbHelper.execute('itemsInCart', {userId})).recordset)
+
+        console.log(cartItems[0].quantity);
+        
+
+        return res.json({
+            cartItems:cartItems
+        })
+        
+    } catch (error:any) {
+        return res.json({
+            error:error.originalError.info.message
+        })
+    }
+}
