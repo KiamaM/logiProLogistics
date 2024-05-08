@@ -21,5 +21,5 @@ export const loginUserValidation = joi.object({
             allow:['com', 'ke']
         }
     }).message('Invalid email format'),
-    password:joi.string().required().pattern(new RegExp('^[a-zA-Z0-9!@#$%^&*()_+\\-=\\[\\]{};:\'"|,.<>\\/\\\\]{8,30}$')).message('Password must be 8-30 characters and must contain a special character.')
+    password:joi.string().required()
 })
